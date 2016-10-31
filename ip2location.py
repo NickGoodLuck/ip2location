@@ -8,7 +8,7 @@ import cStringIO
 
 
 def get_ip_information(ip):
-    url1 = 'http://api.map.baidu.com/highacciploc/v1?qcip=' + ip + '&qterm=pc&ak=eQEBAYg56rIGNgcuVBK3jBPvkOV1UL04&coord=bd09ll&extensions=3'
+    url1 = 'http://api.map.baidu.com/highacciploc/v1?qcip=' + ip + '&qterm=pc&ak=百度key&coord=bd09ll&extensions=3'
     poiss = ''
     request = urllib2.Request(url1)
     page = urllib2.urlopen(request, timeout=10)
@@ -27,7 +27,7 @@ def get_ip_information(ip):
         print lat
         print lng
         print formatted_address
-        url = 'http://api.map.baidu.com/staticimage/v2?ak=eQEBAYg56rIGNgcuVBK3jBPvkOV1UL04&mcode=666666&center=' + str(
+        url = 'http://api.map.baidu.com/staticimage/v2?ak=百度key&mcode=666666&center=' + str(
             lng) + ',' + str(lat) + '&markers=' + str(lng) + ',' + str(lat) + '&width=800&height=800&zoom=19'
         file = cStringIO.StringIO(urllib2.urlopen(url).read())
         img = Image.open(file)
